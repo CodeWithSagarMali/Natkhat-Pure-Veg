@@ -1,0 +1,83 @@
+/* Pure Veg Premium Design Tokens & Variables */
+
+:root {
+  /* Fonts */
+  --font-family-title: 'Outfit', sans-serif;
+  --font-family-body: 'Inter', sans-serif;
+
+  /* Theme Defaults: Light Mode */
+  --bg-primary: #fcfdfc;
+  --bg-secondary: #f4f8f4;
+  --bg-tertiary: #ffffff;
+  --bg-card: #ffffff;
+  --bg-card-hover: #f9fbf9;
+  
+  --border-color: #e2ede2;
+  --border-color-focus: #4caf50;
+  
+  --text-primary: #1e2d1f;
+  --text-secondary: #5a6e5b;
+  --text-muted: #8d9f8e;
+  --text-inverse: #ffffff;
+
+  /* Accent Greens (Brand colors) */
+  --color-primary: #2e7d32;       /* Rich Forest Green */
+  --color-primary-light: #e8f5e9; /* Light green tint */
+  --color-primary-dark: #1b5e20;  /* Deep green for buttons and active states */
+  --color-accent: #81c784;        /* Soft Sage Green */
+  --color-success: #4caf50;       /* Bright Green for veg badge, success status */
+  --color-warning: #ffb74d;       /* Orange for preparation, cooking status */
+  --color-danger: #e57373;        /* Red for alerts / critical errors */
+  --color-info: #4fc3f7;          /* Blue info accent */
+
+  /* Pure Veg Badge Colors */
+  --veg-border: #4caf50;
+  --veg-fill: #4caf50;
+  
+  /* Jain Badge Colors */
+  --jain-border: #ff9800;
+  --jain-fill: #ff9800;
+
+  /* Shadows */
+  --shadow-sm: 0 2px 8px rgba(46, 125, 50, 0.05);
+  --shadow-md: 0 4px 16px rgba(46, 125, 50, 0.08);
+  --shadow-lg: 0 8px 32px rgba(46, 125, 50, 0.12);
+  --shadow-focus: 0 0 0 3px rgba(76, 175, 80, 0.2);
+
+  /* Radius */
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --radius-full: 9999px;
+
+  /* Transitions */
+  --transition-fast: 0.15s ease;
+  --transition-normal: 0.3s ease;
+  --transition-slow: 0.5s ease;
+}
+
+[data-theme="dark"] {
+  /* Dark Mode Styles */
+  --bg-primary: #121912;
+  --bg-secondary: #1a231a;
+  --bg-tertiary: #202b20;
+  --bg-card: #1c271c;
+  --bg-card-hover: #223222;
+
+  --border-color: #2b3a2b;
+  --border-color-focus: #81c784;
+
+  --text-primary: #f0f7f0;
+  --text-secondary: #b5c7b6;
+  --text-muted: #7d8f7e;
+  --text-inverse: #121912;
+
+  --color-primary: #4caf50;
+  --color-primary-light: #1b301c;
+  --color-primary-dark: #81c784;
+  --color-accent: #c8e6c9;
+
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.5);
+}
