@@ -186,11 +186,15 @@ export const MenuManagement = () => {
               <tbody>
                 {filteredItems.map(item => {
                   let imgUrl = '';
-                  try {
-                    const parsed = JSON.parse(item.images || '[]');
-                    imgUrl = parsed[0] || '';
-                  } catch {
-                    imgUrl = item.images || '';
+                  if (Array.isArray(item.images)) {
+                    imgUrl = item.images[0] || '';
+                  } else {
+                    try {
+                      const parsed = JSON.parse(item.images || '[]');
+                      imgUrl = Array.isArray(parsed) ? (parsed[0] || '') : parsed;
+                    } catch {
+                      imgUrl = item.images || '';
+                    }
                   }
 
                   return (

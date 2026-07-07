@@ -198,13 +198,17 @@ export const Menu = () => {
               <div style={{ height: '150px', backgroundColor: 'var(--bg-secondary)', display: 'flex', alignItems: 'center', justifyContent: 'center', position: 'relative', overflow: 'hidden' }}>
                 {(() => {
                   let imgUrl = '';
-                  try {
-                    const parsed = JSON.parse(item.images || '[]');
-                    imgUrl = parsed[0] || '';
-                  } catch (e) {
-                    imgUrl = item.images || '';
+                  if (Array.isArray(item.images)) {
+                    imgUrl = item.images[0] || '';
+                  } else {
+                    try {
+                      const parsed = JSON.parse(item.images || '[]');
+                      imgUrl = Array.isArray(parsed) ? (parsed[0] || '') : parsed;
+                    } catch (e) {
+                      imgUrl = item.images || '';
+                    }
                   }
-                  if (imgUrl && imgUrl.startsWith('http')) {
+                  if (imgUrl && typeof imgUrl === 'string' && imgUrl.startsWith('http')) {
                     return <img src={imgUrl} alt={item.name} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />;
                   } else {
                     return <Icon name="utensils" size={40} color="var(--color-primary)" opacity="0.4" />;
