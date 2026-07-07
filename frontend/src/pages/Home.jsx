@@ -83,8 +83,8 @@ export const Home = ({ setCurrentTab }) => {
           
           {/* Card 1 */}
           <div className="glass-card" style={{ padding: '0', overflow: 'hidden', display: 'flex', flexDirection: 'column', height: '100%' }}>
-            <div style={{ height: '180px', backgroundColor: '#e2ede2', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-              <Icon name="utensils" size={48} color="var(--color-primary)" />
+            <div style={{ height: '180px', overflow: 'hidden' }}>
+              <img src="https://images.unsplash.com/photo-1631452180519-c014fe946bc7?w=600&auto=format&fit=crop&q=60" alt="Paneer Butter Masala" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
             </div>
             <div style={{ padding: '1.25rem', display: 'flex', flexDirection: 'column', gap: '0.5rem', flex: 1 }}>
               <div style={{ display: 'flex', justify: 'space-between', alignItems: 'center' }}>
@@ -104,8 +104,8 @@ export const Home = ({ setCurrentTab }) => {
 
           {/* Card 2 */}
           <div className="glass-card" style={{ padding: '0', overflow: 'hidden', display: 'flex', flexDirection: 'column', height: '100%' }}>
-            <div style={{ height: '180px', backgroundColor: '#e2ede2', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-              <Icon name="utensils" size={48} color="var(--color-primary)" />
+            <div style={{ height: '180px', overflow: 'hidden' }}>
+              <img src="https://images.unsplash.com/photo-1668236543090-82eba5ee5976?w=600&auto=format&fit=crop&q=60" alt="Masala Dosa" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
             </div>
             <div style={{ padding: '1.25rem', display: 'flex', flexDirection: 'column', gap: '0.5rem', flex: 1 }}>
               <div style={{ display: 'flex', justify: 'space-between', alignItems: 'center' }}>
@@ -125,8 +125,8 @@ export const Home = ({ setCurrentTab }) => {
 
           {/* Card 3 */}
           <div className="glass-card" style={{ padding: '0', overflow: 'hidden', display: 'flex', flexDirection: 'column', height: '100%' }}>
-            <div style={{ height: '180px', backgroundColor: '#e2ede2', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-              <Icon name="utensils" size={48} color="var(--color-primary)" />
+            <div style={{ height: '180px', overflow: 'hidden' }}>
+              <img src="https://images.unsplash.com/photo-1626777552726-4a6b54c97e46?w=600&auto=format&fit=crop&q=60" alt="Royal Maharaja Thali" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
             </div>
             <div style={{ padding: '1.25rem', display: 'flex', flexDirection: 'column', gap: '0.5rem', flex: 1 }}>
               <div style={{ display: 'flex', justify: 'space-between', alignItems: 'center' }}>

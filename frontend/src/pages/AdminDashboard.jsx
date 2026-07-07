@@ -10,9 +10,9 @@ export const AdminDashboard = () => {
   // Settings edit state
   const [settings, setSettings] = useState({
     gst_percentage: '5.0',
-    restaurant_name: 'Gourmet Veg Oasis',
+    restaurant_name: 'Natkhat Pure Veg',
     restaurant_phone: '+91 98765 43210',
-    restaurant_email: 'contact@gourmetvegoasis.com',
+    restaurant_email: 'contact@natkhatveg.com',
     delivery_charge: '40.00'
   });
   const [settingsMsg, setSettingsMsg] = useState('');

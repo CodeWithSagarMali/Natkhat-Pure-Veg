@@ -7,7 +7,7 @@ export const DeliveryDashboard = () => {
   const [earnings, setEarnings] = useState(0);
 
   // Delivery simulation details
-  const [gpsSim, setGpsSim] = useState('Standby at Gourmet Veg Oasis');
+  const [gpsSim, setGpsSim] = useState('Standby at Natkhat Pure Veg');
   
   useEffect(() => {
     fetchDeliveryOrders();
@@ -58,7 +58,7 @@ export const DeliveryDashboard = () => {
 
       if (res.ok) {
         if (newStatus === 'delivered') {
-          setGpsSim('Delivery Complete. Returning to Oasis...');
+          setGpsSim('Delivery Complete. Returning to Natkhat Pure Veg...');
         } else {
           setGpsSim(`Simulating Live GPS: Delivering package for Order #${orderId}...`);
         }

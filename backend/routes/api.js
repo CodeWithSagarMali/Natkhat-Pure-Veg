@@ -296,6 +296,40 @@ router.post('/tables/reserve', (req, res) => {
     }
 });
 
+router.get('/tables/reservations', authenticateToken, (req, res) => {
+    try {
+        const reservations = db.query(`
+            SELECT tr.*, t.table_number 
+            FROM table_reservations tr
+            LEFT JOIN restaurant_tables t ON tr.table_id = t.id
+            ORDER BY tr.reservation_time DESC
+        `);
+        res.json(reservations);
+    } catch (error) {
+        res.status(500).json({ error: error.message });
+    }
+});
+
+router.put('/tables/reservations/:id/status', authenticateToken, (req, res) => {
+    try {
+        const { status } = req.body;
+        const { id } = req.params;
+        db.run('UPDATE table_reservations SET status = ? WHERE id = ?', [status, id]);
+        
+        // If reservation is completed or cancelled, release the table
+        const reservation = db.queryOne('SELECT table_id FROM table_reservations WHERE id = ?', [id]);
+        if (reservation && (status === 'completed' || status === 'cancelled')) {
+            db.run('UPDATE restaurant_tables SET status = "available" WHERE id = ?', [reservation.table_id]);
+        } else if (reservation && status === 'confirmed') {
+            db.run('UPDATE restaurant_tables SET status = "reserved" WHERE id = ?', [reservation.table_id]);
+        }
+
+        res.json({ message: 'Reservation status updated successfully' });
+    } catch (error) {
+        res.status(500).json({ error: error.message });
+    }
+});
+
 
 // -------------------------------------------------------------
 // ORDER ENDPOINTS
@@ -459,36 +493,46 @@ router.get('/orders', authenticateToken, (req, res) => {
 
 router.put('/orders/:id/status', authenticateToken, (req, res) => {
     try {
-        const { status, delivery_partner_id } = req.body;
+        const { status, delivery_partner_id, payment_status } = req.body;
         const { id } = req.params;
 
-        let sql = 'UPDATE orders SET status = ?';
-        const params = [status];
+        const updates = [];
+        const params = [];
 
+        if (status) {
+            updates.push('status = ?');
+            params.push(status);
+        }
         if (delivery_partner_id) {
-            sql += ', delivery_partner_id = ?';
+            updates.push('delivery_partner_id = ?');
             params.push(delivery_partner_id);
         }
+        if (payment_status) {
+            updates.push('payment_status = ?');
+            params.push(payment_status);
+        }
 
-        sql += ' WHERE id = ?';
-        params.push(id);
-
-        db.run(sql, params);
+        if (updates.length > 0) {
+            const sql = `UPDATE orders SET ${updates.join(', ')} WHERE id = ?`;
+            params.push(id);
+            db.run(sql, params);
+        }
 
         // Manage Table Status based on order status updates
-        const order = db.queryOne('SELECT table_id, order_type FROM orders WHERE id = ?', [id]);
+        const order = db.queryOne('SELECT table_id, order_type, status FROM orders WHERE id = ?', [id]);
         if (order && order.table_id) {
-            if (status === 'served') {
+            const currentStatus = status || order.status;
+            if (currentStatus === 'served') {
                 db.run('UPDATE restaurant_tables SET status = "cleaning" WHERE id = ?', [order.table_id]);
-            } else if (status === 'delivered' || status === 'cancelled') {
+            } else if (currentStatus === 'delivered' || currentStatus === 'cancelled') {
                 db.run('UPDATE restaurant_tables SET status = "available" WHERE id = ?', [order.table_id]);
             }
         }
 
         // Notification print log
-        console.log(`[NOTIF LOG] Order #${id} status changed to: ${status}`);
+        console.log(`[NOTIF LOG] Order #${id} updated: status=${status}, payment_status=${payment_status}`);
 
-        res.json({ message: `Order status updated to ${status}` });
+        res.json({ message: `Order updated successfully` });
     } catch (error) {
         res.status(500).json({ error: error.message });
     }
@@ -549,13 +593,13 @@ router.get('/billing/receipt/:id', (req, res) => {
         const receiptHtml = `
             <div style="font-family: 'Courier New', Courier, monospace; width: 300px; padding: 15px; border: 1px dashed #333; margin: auto; background-color: #fff; color: #000;">
                 <div style="text-align: center; margin-bottom: 10px;">
-                    <h2 style="margin: 0; font-size: 1.4rem; color: #2e7d32;">GOURMET VEG OASIS</h2>
+                    <h2 style="margin: 0; font-size: 1.4rem; color: #2e7d32;">NATKHAT PURE VEG</h2>
                     <p style="margin: 3px 0; font-size: 0.8rem;">100% Pure Vegetarian</p>
-                    <p style="margin: 3px 0; font-size: 0.75rem;">Green View Avenue, Food Plaza, Suite 101</p>
+                    <p style="margin: 3px 0; font-size: 0.75rem;">Divine Krishna Arcade, Temple Road, Sector 4</p>
                     <p style="margin: 3px 0; font-size: 0.75rem;">Tel: +91 98765 43210</p>
                 </div>
                 <hr style="border-top: 1px dashed #333;" />
-                <p style="margin: 5px 0; font-size: 0.8rem;"><strong>Invoice #:</strong> GVO-${order.id}</p>
+                <p style="margin: 5px 0; font-size: 0.8rem;"><strong>Invoice #:</strong> NPV-${order.id}</p>
                 <p style="margin: 5px 0; font-size: 0.8rem;"><strong>Date:</strong> ${new Date(order.created_at).toLocaleString()}</p>
                 <p style="margin: 5px 0; font-size: 0.8rem;"><strong>Order Type:</strong> ${order.order_type.toUpperCase()}</p>
                 ${order.table_number ? `<p style="margin: 5px 0; font-size: 0.8rem;"><strong>Table:</strong> ${order.table_number}</p>` : ''}

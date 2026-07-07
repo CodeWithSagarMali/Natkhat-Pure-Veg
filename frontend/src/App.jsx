@@ -16,6 +16,7 @@ import WaiterDashboard from './pages/WaiterDashboard';
 import KitchenDashboard from './pages/KitchenDashboard';
 import DeliveryDashboard from './pages/DeliveryDashboard';
 import Icon from './components/Icons';
+import { MenuManagement, TablesLayout, InventoryManagement, EmployeeDirectory, SystemSettings } from './pages/ManagementPanels';
 
 const MainAppContent = () => {
   const { user, loading } = useAuth();
@@ -170,6 +171,16 @@ const MainAppContent = () => {
         return <KitchenDashboard />;
       case 'delivery_dashboard':
         return <DeliveryDashboard />;
+      case 'menu_manage':
+        return <MenuManagement />;
+      case 'tables_manage':
+        return <TablesLayout />;
+      case 'inventory':
+        return <InventoryManagement />;
+      case 'employees':
+        return <EmployeeDirectory />;
+      case 'admin_settings':
+        return <SystemSettings />;
       default:
         return <Home setCurrentTab={setCurrentTab} />;
     }

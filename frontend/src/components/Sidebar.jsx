@@ -1,9 +1,11 @@
 import React from 'react';
 import { useAuth } from '../contexts/AuthContext';
+import { useTheme } from '../contexts/ThemeContext';
 import Icon from './Icons';
 
 export const Sidebar = ({ currentTab, setCurrentTab }) => {
   const { user } = useAuth();
+  const { theme, setTheme } = useTheme();
   
   // Define sidebar menu options based on role
   const getMenuOptions = () => {
@@ -65,7 +67,7 @@ export const Sidebar = ({ currentTab, setCurrentTab }) => {
       <div className="sidebar-brand">
         <Icon name="utensils" color="var(--color-primary)" size={24} />
         <div>
-          <h3 style={{ fontSize: '1rem', lineHeight: '1.2' }}>VEG OASIS</h3>
+          <h3 style={{ fontSize: '1rem', lineHeight: '1.2' }}>NATKHAT VEG</h3>
           <span style={{ fontSize: '0.65rem', color: 'var(--text-muted)', letterSpacing: '0.5px' }}>DASHBOARD</span>
         </div>
       </div>
@@ -94,6 +96,38 @@ export const Sidebar = ({ currentTab, setCurrentTab }) => {
           LoggedIn: <span style={{ fontWeight: 'bold', color: 'var(--color-primary)' }}>{user.role.toUpperCase()}</span>
         </div>
       )}
+      
+      {/* Peacock Feather Krishna Theme Toggle Option */}
+      <div style={{ padding: '0.75rem 1rem', borderTop: '1.5px solid var(--border-color)' }}>
+        <button
+          onClick={() => {
+            if (theme === 'krishna') {
+              setTheme('light');
+            } else {
+              setTheme('krishna');
+            }
+          }}
+          className="btn"
+          style={{
+            display: 'flex',
+            alignItems: 'center',
+            gap: '8px',
+            width: '100%',
+            justifyContent: 'center',
+            fontSize: '0.8rem',
+            padding: '0.5rem',
+            borderRadius: 'var(--radius-md)',
+            backgroundColor: theme === 'krishna' ? 'var(--color-primary-light)' : 'transparent',
+            border: theme === 'krishna' ? '1.5px solid var(--color-primary)' : '1.5px dashed var(--text-muted)',
+            color: theme === 'krishna' ? 'var(--color-primary)' : 'var(--text-secondary)',
+            cursor: 'pointer'
+          }}
+          title="Toggle Lord Krishna Divine Theme"
+        >
+          <Icon name="feather" size={16} color={theme === 'krishna' ? '#ffd700' : 'var(--text-secondary)'} />
+          <span style={{ fontWeight: '600' }}>Divine Theme</span>
+        </button>
+      </div>
     </aside>
   );
 };

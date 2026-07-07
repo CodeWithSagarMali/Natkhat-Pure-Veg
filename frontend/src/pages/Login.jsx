@@ -102,7 +102,7 @@ export const Login = ({ setCurrentTab }) => {
             <Icon name="utensils" color="var(--color-primary)" size={28} />
           </div>
           <h2>
-            {isForgot ? 'Reset Password' : isRegister ? 'Join Gourmet Veg Oasis' : 'Welcome Back'}
+            {isForgot ? 'Reset Password' : isRegister ? 'Join Natkhat Pure Veg' : 'Welcome Back'}
           </h2>
           <p style={{ fontSize: '0.85rem', color: 'var(--text-secondary)', marginTop: '0.25rem' }}>
             {isForgot ? 'Recover your account password' : isRegister ? 'Create your account' : 'Sign in to order fresh vegetarian meals'}
@@ -264,7 +264,7 @@ export const Login = ({ setCurrentTab }) => {
           ) : (
             <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
               <p>
-                New to Oasis?{' '}
+                New to Natkhat?{' '}
                 <button onClick={() => { setIsRegister(true); setError(''); setMessage(''); }} style={{ background: 'none', border: 'none', color: 'var(--color-primary)', fontWeight: '600', cursor: 'pointer' }}>
                   Create Account
                 </button>

@@ -21,7 +21,7 @@ app.use('/api', apiRouter);
 // Base route for API status
 app.get('/', (req, res) => {
     res.json({
-        name: 'Gourmet Veg Oasis REST API',
+        name: 'Natkhat Pure Veg REST API',
         status: 'online',
         version: '1.0.0',
         environment: process.env.NODE_ENV || 'development',
@@ -41,7 +41,7 @@ app.use((err, req, res, next) => {
 // Start Server
 app.listen(PORT, () => {
     console.log(`=================================================`);
-    console.log(` GOURMET VEG OASIS BACKEND RUNNING ON PORT ${PORT}`);
+    console.log(` NATKHAT PURE VEG BACKEND RUNNING ON PORT ${PORT}`);
     console.log(` REST API URL: http://localhost:${PORT}`);
     console.log(` Environment: ${process.env.NODE_ENV || 'development'}`);
     console.log(` Database: SQLite (embedded in root)`);

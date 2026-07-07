@@ -9,13 +9,13 @@ function runSeed({ query, queryOne, run }) {
 
     // 1. Insert Default Users
     const users = [
-        { username: 'admin', email: 'admin@vegoasis.com', password: 'admin123', role: 'admin', phone: '9876543210' },
-        { username: 'manager', email: 'manager@vegoasis.com', password: 'manager123', role: 'manager', phone: '9876543211' },
-        { username: 'cashier', email: 'cashier@vegoasis.com', password: 'cashier123', role: 'cashier', phone: '9876543212' },
-        { username: 'waiter', email: 'waiter@vegoasis.com', password: 'waiter123', role: 'waiter', phone: '9876543213' },
-        { username: 'kitchen', email: 'kitchen@vegoasis.com', password: 'kitchen123', role: 'kitchen', phone: '9876543214' },
-        { username: 'delivery', email: 'delivery@vegoasis.com', password: 'delivery123', role: 'delivery', phone: '9876543215' },
-        { username: 'customer', email: 'customer@vegoasis.com', password: 'customer123', role: 'customer', phone: '9876543216' }
+        { username: 'admin', email: 'admin@natkhatveg.com', password: 'admin123', role: 'admin', phone: '9876543210' },
+        { username: 'manager', email: 'manager@natkhatveg.com', password: 'manager123', role: 'manager', phone: '9876543211' },
+        { username: 'cashier', email: 'cashier@natkhatveg.com', password: 'cashier123', role: 'cashier', phone: '9876543212' },
+        { username: 'waiter', email: 'waiter@natkhatveg.com', password: 'waiter123', role: 'waiter', phone: '9876543213' },
+        { username: 'kitchen', email: 'kitchen@natkhatveg.com', password: 'kitchen123', role: 'kitchen', phone: '9876543214' },
+        { username: 'delivery', email: 'delivery@natkhatveg.com', password: 'delivery123', role: 'delivery', phone: '9876543215' },
+        { username: 'customer', email: 'customer@natkhatveg.com', password: 'customer123', role: 'customer', phone: '9876543216' }
     ];
 
     for (const u of users) {
@@ -29,21 +29,21 @@ function runSeed({ query, queryOne, run }) {
 
     // 2. Insert Menu Categories
     const categories = [
-        { name: 'South Indian', description: 'Traditional and crispy dosas, fluffy idlis, and piping hot vadas.', image_url: 'south_indian.jpg' },
-        { name: 'North Indian', description: 'Flavorful curries, freshly baked naans, and rich gravies.', image_url: 'north_indian.jpg' },
-        { name: 'Punjabi', description: 'Rich paneer specialities, dal makhani, and butter-laden flatbreads.', image_url: 'punjabi.jpg' },
-        { name: 'Chinese', description: 'Delicious noodles, fried rice, manchurian, and paneer chilly.', image_url: 'chinese.jpg' },
-        { name: 'Snacks', description: 'Tasty and savory quick bites to satisfy your cravings.', image_url: 'snacks.jpg' },
-        { name: 'Fast Food', description: 'Premium veggie burgers, cheese loaded pizzas, and wraps.', image_url: 'fast_food.jpg' },
-        { name: 'Thali', description: 'Complete traditional meals served with curries, breads, sweets, and sides.', image_url: 'thali.jpg' },
-        { name: 'Breakfast', description: 'Perfect morning options: poha, paratha, upma, and more.', image_url: 'breakfast.jpg' },
-        { name: 'Lunch', description: 'Special combinations and quick lunches.', image_url: 'lunch.jpg' },
-        { name: 'Dinner', description: 'Elegant and complete dinner selections.', image_url: 'dinner.jpg' },
-        { name: 'Desserts', description: 'Sweet treats: gulab jamun, rasmalai, sizzling brownie, and halwa.', image_url: 'desserts.jpg' },
-        { name: 'Ice Cream', description: 'Creamy scoops, sundaes, and ice-cream logs.', image_url: 'ice_cream.jpg' },
-        { name: 'Beverages', description: 'Traditional filter coffee, masala tea, and soft drinks.', image_url: 'beverages.jpg' },
-        { name: 'Juices', description: 'Freshly squeezed fruit juices without artificial sweeteners.', image_url: 'juices.jpg' },
-        { name: 'Milkshakes', description: 'Thick, creamy shakes topped with nuts and ice cream.', image_url: 'milkshakes.jpg' }
+        { name: 'South Indian', description: 'Traditional and crispy dosas, fluffy idlis, and piping hot vadas.', image_url: 'https://images.unsplash.com/photo-1589301760014-d929f3979dbc?w=600&auto=format&fit=crop&q=60' },
+        { name: 'North Indian', description: 'Flavorful curries, freshly baked naans, and rich gravies.', image_url: 'https://images.unsplash.com/photo-1631452180519-c014fe946bc7?w=600&auto=format&fit=crop&q=60' },
+        { name: 'Punjabi', description: 'Rich paneer specialities, dal makhani, and butter-laden flatbreads.', image_url: 'https://images.unsplash.com/photo-1626777552726-4a6b54c97e46?w=600&auto=format&fit=crop&q=60' },
+        { name: 'Chinese', description: 'Delicious noodles, fried rice, manchurian, and paneer chilly.', image_url: 'https://images.unsplash.com/photo-1585032226651-759b368d7246?w=600&auto=format&fit=crop&q=60' },
+        { name: 'Snacks', description: 'Tasty and savory quick bites to satisfy your cravings.', image_url: 'https://images.unsplash.com/photo-1601050690597-df056fb4ce78?w=600&auto=format&fit=crop&q=60' },
+        { name: 'Fast Food', description: 'Premium veggie burgers, cheese loaded pizzas, and wraps.', image_url: 'https://images.unsplash.com/photo-1604068549290-dea0e4a305ca?w=600&auto=format&fit=crop&q=60' },
+        { name: 'Thali', description: 'Complete traditional meals served with curries, breads, sweets, and sides.', image_url: 'https://images.unsplash.com/photo-1626777552726-4a6b54c97e46?w=600&auto=format&fit=crop&q=60' },
+        { name: 'Breakfast', description: 'Perfect morning options: poha, paratha, upma, and more.', image_url: 'https://images.unsplash.com/photo-1601050690597-df056fb4ce78?w=600&auto=format&fit=crop&q=60' },
+        { name: 'Lunch', description: 'Special combinations and quick lunches.', image_url: 'https://images.unsplash.com/photo-1631452180519-c014fe946bc7?w=600&auto=format&fit=crop&q=60' },
+        { name: 'Dinner', description: 'Elegant and complete dinner selections.', image_url: 'https://images.unsplash.com/photo-1626777552726-4a6b54c97e46?w=600&auto=format&fit=crop&q=60' },
+        { name: 'Desserts', description: 'Sweet treats: gulab jamun, rasmalai, sizzling brownie, and halwa.', image_url: 'https://images.unsplash.com/photo-1587314168485-3236d6710814?w=600&auto=format&fit=crop&q=60' },
+        { name: 'Ice Cream', description: 'Creamy scoops, sundaes, and ice-cream logs.', image_url: 'https://images.unsplash.com/photo-1572490122747-3968b75cc699?w=600&auto=format&fit=crop&q=60' },
+        { name: 'Beverages', description: 'Traditional filter coffee, masala tea, and soft drinks.', image_url: 'https://images.unsplash.com/photo-1572490122747-3968b75cc699?w=600&auto=format&fit=crop&q=60' },
+        { name: 'Juices', description: 'Freshly squeezed fruit juices without artificial sweeteners.', image_url: 'https://images.unsplash.com/photo-1572490122747-3968b75cc699?w=600&auto=format&fit=crop&q=60' },
+        { name: 'Milkshakes', description: 'Thick, creamy shakes topped with nuts and ice cream.', image_url: 'https://images.unsplash.com/photo-1572490122747-3968b75cc699?w=600&auto=format&fit=crop&q=60' }
     ];
 
     const categoryMap = {};
@@ -66,7 +66,7 @@ function runSeed({ query, queryOne, run }) {
             ingredients: 'Rice, Urad Dal, Potatoes, Mustard Seeds, Curry Leaves, Butter',
             allergens: 'Dairy (Butter)',
             is_jain_available: 1, is_bestseller: 1, is_recommended: 1,
-            images: 'masala_dosa.jpg'
+            images: 'https://images.unsplash.com/photo-1668236543090-82eba5ee5976?w=600&auto=format&fit=crop&q=60'
         },
         {
             category: 'South Indian',
@@ -76,7 +76,7 @@ function runSeed({ query, queryOne, run }) {
             ingredients: 'Rice, Urad Dal, Fenugreek, Spices, Tamarind, Coconut',
             allergens: 'None',
             is_jain_available: 1, is_bestseller: 0, is_recommended: 1,
-            images: 'idli_vada.jpg'
+            images: 'https://images.unsplash.com/photo-1589301760014-d929f3979dbc?w=600&auto=format&fit=crop&q=60'
         },
         // Punjabi / North Indian
         {
@@ -87,7 +87,7 @@ function runSeed({ query, queryOne, run }) {
             ingredients: 'Paneer, Tomatoes, Cashews, Cream, Butter, Garam Masala',
             allergens: 'Dairy, Nuts (Cashews)',
             is_jain_available: 1, is_bestseller: 1, is_recommended: 1,
-            images: 'paneer_butter_masala.jpg'
+            images: 'https://images.unsplash.com/photo-1631452180519-c014fe946bc7?w=600&auto=format&fit=crop&q=60'
         },
         {
             category: 'Punjabi',
@@ -97,7 +97,7 @@ function runSeed({ query, queryOne, run }) {
             ingredients: 'Black Urad Dal, Rajma, Tomatoes, Butter, Cream, Garlic, Spices',
             allergens: 'Dairy',
             is_jain_available: 0, is_bestseller: 1, is_recommended: 0,
-            images: 'dal_makhani.jpg'
+            images: 'https://images.unsplash.com/photo-1626777552726-4a6b54c97e46?w=600&auto=format&fit=crop&q=60'
         },
         {
             category: 'North Indian',
@@ -107,7 +107,7 @@ function runSeed({ query, queryOne, run }) {
             ingredients: 'Maida, Yeast, Butter, Milk',
             allergens: 'Gluten, Dairy',
             is_jain_available: 1, is_bestseller: 0, is_recommended: 1,
-            images: 'butter_naan.jpg'
+            images: 'https://images.unsplash.com/photo-1627308595229-7830a5c91f9f?w=600&auto=format&fit=crop&q=60'
         },
         // Chinese
         {
@@ -118,7 +118,7 @@ function runSeed({ query, queryOne, run }) {
             ingredients: 'Noodles, Capsicum, Carrot, Cabbage, Spring Onion, Schezwan Sauce, Soy Sauce',
             allergens: 'Gluten, Soy',
             is_jain_available: 0, is_bestseller: 0, is_recommended: 0,
-            images: 'schezwan_noodles.jpg'
+            images: 'https://images.unsplash.com/photo-1585032226651-759b368d7246?w=600&auto=format&fit=crop&q=60'
         },
         {
             category: 'Chinese',
@@ -128,7 +128,7 @@ function runSeed({ query, queryOne, run }) {
             ingredients: 'Cabbage, Carrot, Cornflour, Garlic, Ginger, Soy Sauce, Chilli Sauce',
             allergens: 'Soy, Gluten',
             is_jain_available: 0, is_bestseller: 1, is_recommended: 1,
-            images: 'manchurian_gravy.jpg'
+            images: 'https://images.unsplash.com/photo-1603532648955-039310d9ed75?w=600&auto=format&fit=crop&q=60'
         },
         // Fast Food
         {
@@ -139,7 +139,7 @@ function runSeed({ query, queryOne, run }) {
             ingredients: 'Pizza Base, Tomato Puree, Mozzarella Cheese, Olive Oil, Fresh Basil',
             allergens: 'Gluten, Dairy',
             is_jain_available: 1, is_bestseller: 1, is_recommended: 1,
-            images: 'margherita_pizza.jpg'
+            images: 'https://images.unsplash.com/photo-1604068549290-dea0e4a305ca?w=600&auto=format&fit=crop&q=60'
         },
         // Thali
         {
@@ -150,7 +150,7 @@ function runSeed({ query, queryOne, run }) {
             ingredients: 'Mixed Veggies, Paneer, Lentils, Rice, Wheat Flour, Curd, Sweets',
             allergens: 'Dairy, Gluten, Nuts',
             is_jain_available: 1, is_bestseller: 1, is_recommended: 1,
-            images: 'maharaja_thali.jpg'
+            images: 'https://images.unsplash.com/photo-1626777552726-4a6b54c97e46?w=600&auto=format&fit=crop&q=60'
         },
         // Breakfast
         {
@@ -161,7 +161,7 @@ function runSeed({ query, queryOne, run }) {
             ingredients: 'Flattened Rice, Mustard Seeds, Turmeric, Peanuts, Sev, Lemon',
             allergens: 'Peanuts',
             is_jain_available: 1, is_bestseller: 1, is_recommended: 0,
-            images: 'indori_poha.jpg'
+            images: 'https://images.unsplash.com/photo-1601050690597-df056fb4ce78?w=600&auto=format&fit=crop&q=60'
         },
         // Desserts
         {
@@ -172,7 +172,7 @@ function runSeed({ query, queryOne, run }) {
             ingredients: 'Koya, Paneer, Maida, Sugar Syrup, Pistachio, Cardamom',
             allergens: 'Dairy, Gluten, Nuts',
             is_jain_available: 1, is_bestseller: 1, is_recommended: 1,
-            images: 'gulab_jamun.jpg'
+            images: 'https://images.unsplash.com/photo-1587314168485-3236d6710814?w=600&auto=format&fit=crop&q=60'
         },
         // Milkshakes
         {
@@ -183,7 +183,7 @@ function runSeed({ query, queryOne, run }) {
             ingredients: 'Alphonso Mango Pulp, Fresh Milk, Sugar, Vanilla Ice Cream',
             allergens: 'Dairy',
             is_jain_available: 1, is_bestseller: 1, is_recommended: 0,
-            images: 'mango_shake.jpg'
+            images: 'https://images.unsplash.com/photo-1572490122747-3968b75cc699?w=600&auto=format&fit=crop&q=60'
         }
     ];
 
@@ -265,10 +265,10 @@ function runSeed({ query, queryOne, run }) {
     // 7. Insert Settings
     const settingsData = {
         'gst_percentage': '5.0',
-        'restaurant_name': 'Gourmet Veg Oasis',
-        'restaurant_address': 'Green View Avenue, Food Plaza, Block C, Suite 101',
+        'restaurant_name': 'Natkhat Pure Veg',
+        'restaurant_address': 'Divine Krishna Arcade, Temple Road, Sector 4',
         'restaurant_phone': '+91 98765 43210',
-        'restaurant_email': 'contact@gourmetvegoasis.com',
+        'restaurant_email': 'contact@natkhatveg.com',
         'working_hours': '08:00 AM - 11:00 PM',
         'delivery_charge': '40.00',
         'service_charge_pct': '5.0',

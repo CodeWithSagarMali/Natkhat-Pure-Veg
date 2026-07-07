@@ -40,19 +40,16 @@ export const CashierDashboard = () => {
           'Content-Type': 'application/json',
           'Authorization': `Bearer ${localStorage.getItem('token')}`
         },
-        body: JSON.stringify({ status: 'served' })
+        body: JSON.stringify({ status: 'served', payment_status: 'paid' })
       });
 
-      const resP = await fetch('/api/orders/create', {
-        method: 'POST', // mock endpoint update or direct SQL can be triggered
-        // wait, we can just settle via updating status or direct API
-      });
-
-      // Let's settle by updating payment status in a mock fashion
-      // In our router we can update order status which updates tables
-      alert(`Order #${orderId} has been successfully settled & marked PAID.`);
-      setSelectedOrder(null);
-      fetchCashierData();
+      if (resS.ok) {
+        alert(`Order #${orderId} has been successfully settled & marked PAID.`);
+        setSelectedOrder(null);
+        fetchCashierData();
+      } else {
+        alert('Failed to settle payment');
+      }
     } catch (err) {
       console.error(err);
     }

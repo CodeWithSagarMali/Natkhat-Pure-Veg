@@ -81,3 +81,34 @@
   --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.4);
   --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.5);
 }
+
+[data-theme="krishna"] {
+  /* Lord Krishna Theme - Deep Peacock Blue & Pitambara Gold */
+  --bg-primary: #040d21;      /* Deep midnight blue */
+  --bg-secondary: #0a1835;    /* Peacock blue dark */
+  --bg-tertiary: #0f244c;     /* Dark navy blue */
+  --bg-card: #0c1f43;         /* Card navy blue */
+  --bg-card-hover: #122d5e;   /* Hover highlight */
+
+  --border-color: #19386c;
+  --border-color-focus: #ffd700; /* Divine Gold */
+
+  --text-primary: #f0f5ff;
+  --text-secondary: #a5bccc;
+  --text-muted: #6e8fa8;
+  --text-inverse: #040d21;
+
+  --color-primary: #ffd700;       /* Pitambara Gold */
+  --color-primary-light: #0d284a; /* Blue contrast tint */
+  --color-primary-dark: #ccab00;
+  --color-accent: #00e5ff;        /* Peacock cyan/teal */
+  --color-success: #00e676;       /* Peacock green */
+  --color-warning: #ffb74d;
+  --color-danger: #ff5252;
+  --color-info: #00e5ff;
+
+  --shadow-sm: 0 2px 8px rgba(0, 229, 255, 0.1);
+  --shadow-md: 0 4px 16px rgba(0, 229, 255, 0.15);
+  --shadow-lg: 0 8px 32px rgba(255, 215, 0, 0.15);
+  --shadow-focus: 0 0 0 3px rgba(0, 229, 255, 0.4);
+}

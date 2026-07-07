@@ -61,7 +61,7 @@ async function runTests() {
         const res = await fetch(`${BASE_URL}/api/auth/login`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ email: 'admin@vegoasis.com', password: 'admin123' })
+            body: JSON.stringify({ email: 'admin@natkhatveg.com', password: 'admin123' })
         });
         assert.strictEqual(res.status, 200);
         const data = await res.json();

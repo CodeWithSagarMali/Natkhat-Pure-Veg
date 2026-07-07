@@ -110,7 +110,7 @@ export const KitchenDashboard = () => {
         </table>
         <hr style="border-top:1px dashed #000;"/>
         ${order.instructions ? `<div style="font-size:12px; margin-top:5px;"><strong>Note:</strong> "${order.instructions}"</div>` : ''}
-        <div style="text-align:center; font-size:10px; margin-top:15px; border:1px solid #000; padding:4px;">Gourmet Veg Oasis</div>
+        <div style="text-align:center; font-size:10px; margin-top:15px; border:1px solid #000; padding:4px;">Natkhat Pure Veg</div>
       </div>
     `);
     kotWindow.document.close();

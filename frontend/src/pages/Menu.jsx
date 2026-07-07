@@ -194,17 +194,30 @@ export const Menu = () => {
         <div className="grid-cards">
           {items.map(item => (
             <div key={item.id} className="glass-card" style={{ padding: '0', overflow: 'hidden', display: 'flex', flexDirection: 'column', height: '100%', transition: 'transform var(--transition-fast)' }}>
-              {/* Image Placeholder */}
-              <div style={{ height: '150px', backgroundColor: 'var(--bg-secondary)', display: 'flex', alignItems: 'center', justifyContent: 'center', position: 'relative' }}>
-                <Icon name="utensils" size={40} color="var(--color-primary)" opacity="0.4" />
-                <div style={{ position: 'absolute', top: '10px', left: '10px', display: 'flex', gap: '4px' }}>
+              {/* Image */}
+              <div style={{ height: '150px', backgroundColor: 'var(--bg-secondary)', display: 'flex', alignItems: 'center', justifyContent: 'center', position: 'relative', overflow: 'hidden' }}>
+                {(() => {
+                  let imgUrl = '';
+                  try {
+                    const parsed = JSON.parse(item.images || '[]');
+                    imgUrl = parsed[0] || '';
+                  } catch (e) {
+                    imgUrl = item.images || '';
+                  }
+                  if (imgUrl && imgUrl.startsWith('http')) {
+                    return <img src={imgUrl} alt={item.name} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />;
+                  } else {
+                    return <Icon name="utensils" size={40} color="var(--color-primary)" opacity="0.4" />;
+                  }
+                })()}
+                <div style={{ position: 'absolute', top: '10px', left: '10px', display: 'flex', gap: '4px', zIndex: 1 }}>
                   <span className="veg-badge" title="Pure Veg" style={{ backgroundColor: 'var(--bg-tertiary)', border: '1.5px solid var(--veg-border)' }}></span>
                   {item.is_jain_available === 1 && (
                     <span className="jain-badge" title="Jain Option Available" style={{ backgroundColor: 'var(--bg-tertiary)', border: '1.5px solid var(--jain-border)' }}></span>
                   )}
                 </div>
                 {item.is_bestseller === 1 && (
-                  <span style={{ position: 'absolute', top: '10px', right: '10px', fontSize: '0.65rem', backgroundColor: 'var(--color-success)', color: '#fff', padding: '2px 6px', borderRadius: '4px', fontWeight: 'bold' }}>Bestseller</span>
+                  <span style={{ position: 'absolute', top: '10px', right: '10px', fontSize: '0.65rem', backgroundColor: 'var(--color-success)', color: '#fff', padding: '2px 6px', borderRadius: '4px', fontWeight: 'bold', zIndex: 1 }}>Bestseller</span>
                 )}
               </div>
 

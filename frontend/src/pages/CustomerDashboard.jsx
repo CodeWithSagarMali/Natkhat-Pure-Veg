@@ -15,7 +15,7 @@ export const CustomerDashboard = () => {
 
   // Live Chat simulation states
   const [chatMessages, setChatMessages] = useState([
-    { sender: 'bot', text: 'Welcome to Gourmet Veg Oasis Support! How can I assist you with your order today?', time: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }) }
+    { sender: 'bot', text: 'Welcome to Natkhat Pure Veg Support! How can I assist you today?', time: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }) }
   ]);
   const [userMsg, setUserMsg] = useState('');
 
@@ -288,7 +288,7 @@ export const CustomerDashboard = () => {
             <div style={{ backgroundColor: 'var(--color-primary)', color: '#fff', padding: '0.75rem 1rem', display: 'flex', alignItems: 'center', gap: '8px' }}>
               <Icon name="chat" size={18} color="#fff" />
               <div>
-                <h4 style={{ color: '#fff', fontSize: '0.9rem' }}>Oasis Helpdesk</h4>
+                <h4 style={{ color: '#fff', fontSize: '0.9rem' }}>Natkhat Helpdesk</h4>
                 <span style={{ fontSize: '0.65rem', opacity: '0.8' }}>Online • Virtual Assistant</span>
               </div>
             </div>

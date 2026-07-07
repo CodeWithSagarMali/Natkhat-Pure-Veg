@@ -19,7 +19,7 @@ export const Header = ({ currentTab, setCurrentTab }) => {
         </div>
         <div>
           <h2 style={{ fontSize: '1.25rem', fontFamily: 'var(--font-family-title)', color: 'var(--color-primary)', display: 'flex', alignItems: 'center', gap: '0.4rem' }}>
-            Gourmet Veg Oasis <span style={{ fontSize: '0.65rem', backgroundColor: 'var(--color-success)', color: '#fff', padding: '1px 6px', borderRadius: '4px', verticalAlign: 'middle' }}>100% VEG</span>
+            Natkhat Pure Veg <span style={{ fontSize: '0.65rem', backgroundColor: 'var(--color-success)', color: '#fff', padding: '1px 6px', borderRadius: '4px', verticalAlign: 'middle' }}>100% VEG</span>
           </h2>
           <p style={{ fontSize: '0.75rem', color: 'var(--text-muted)' }}>Fine Dining & Smart Ordering</p>
         </div>
