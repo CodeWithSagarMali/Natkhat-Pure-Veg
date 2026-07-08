@@ -175,7 +175,7 @@ router.get('/menu/items', (req, res) => {
 
         if (category_id) {
             sql += ' AND m.category_id = ?';
-            params.push(category_id);
+            params.push(parseInt(category_id, 10));
         }
         if (search) {
             sql += ' AND (m.name LIKE ? OR m.description LIKE ?)';

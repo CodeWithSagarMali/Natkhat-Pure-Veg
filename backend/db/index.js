@@ -97,7 +97,7 @@ function run(sql, params = []) {
     try {
         db.run(sql, params);
         saveDb();
-        
+
         // Find changes and lastInsertRowid to match Node.js DatabaseSync/better-sqlite3 return values
         const lastIdRes = queryOne('SELECT last_insert_rowid() as id');
         const changesRes = queryOne('SELECT changes() as count');
@@ -112,7 +112,7 @@ function run(sql, params = []) {
 }
 
 module.exports = {
-    db: null, // Set db to null for direct access compatibility
+    // db: null, // Set db to null for direct access compatibility
     query,
     queryOne,
     run

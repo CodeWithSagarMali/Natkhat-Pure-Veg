@@ -1,0 +1,17 @@
+services:
+  - type: web
+    name: natkhat-pure-veg
+    runtime: docker
+    dockerfilePath: ./Dockerfile
+    plan: free
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 3001
+      - key: JWT_SECRET
+        generateValue: true
+    disk:
+      name: sqlite-data
+      mountPath: /app/backend
+      sizeGB: 1

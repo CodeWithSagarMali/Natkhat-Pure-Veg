@@ -65,7 +65,7 @@ function runSeed({ query, queryOne, run }) {
             price: 120, discount: 10, prep_time: 10, calories: 350,
             ingredients: 'Rice, Urad Dal, Potatoes, Mustard Seeds, Curry Leaves, Butter',
             allergens: 'Dairy (Butter)',
-            is_jain_available: 1, is_bestseller: 1, is_recommended: 1,
+            available: 1, is_jain_available: 1, is_bestseller: 1, is_recommended: 1,
             images: 'https://images.unsplash.com/photo-1668236543090-82eba5ee5976?w=600&auto=format&fit=crop&q=60'
         },
         {
@@ -75,7 +75,7 @@ function runSeed({ query, queryOne, run }) {
             price: 90, discount: 0, prep_time: 8, calories: 280,
             ingredients: 'Rice, Urad Dal, Fenugreek, Spices, Tamarind, Coconut',
             allergens: 'None',
-            is_jain_available: 1, is_bestseller: 0, is_recommended: 1,
+            available: 1, is_jain_available: 1, is_bestseller: 0, is_recommended: 1,
             images: 'https://images.unsplash.com/photo-1589301760014-d929f3979dbc?w=600&auto=format&fit=crop&q=60'
         },
         // Punjabi / North Indian
@@ -86,7 +86,7 @@ function runSeed({ query, queryOne, run }) {
             price: 240, discount: 15, prep_time: 15, calories: 480,
             ingredients: 'Paneer, Tomatoes, Cashews, Cream, Butter, Garam Masala',
             allergens: 'Dairy, Nuts (Cashews)',
-            is_jain_available: 1, is_bestseller: 1, is_recommended: 1,
+            available: 1, is_jain_available: 1, is_bestseller: 1, is_recommended: 1,
             images: 'https://images.unsplash.com/photo-1631452180519-c014fe946bc7?w=600&auto=format&fit=crop&q=60'
         },
         {
@@ -96,7 +96,7 @@ function runSeed({ query, queryOne, run }) {
             price: 190, discount: 0, prep_time: 20, calories: 420,
             ingredients: 'Black Urad Dal, Rajma, Tomatoes, Butter, Cream, Garlic, Spices',
             allergens: 'Dairy',
-            is_jain_available: 0, is_bestseller: 1, is_recommended: 0,
+            available: 1, is_jain_available: 0, is_bestseller: 1, is_recommended: 0,
             images: 'https://images.unsplash.com/photo-1626777552726-4a6b54c97e46?w=600&auto=format&fit=crop&q=60'
         },
         {
@@ -106,7 +106,7 @@ function runSeed({ query, queryOne, run }) {
             price: 50, discount: 0, prep_time: 5, calories: 150,
             ingredients: 'Maida, Yeast, Butter, Milk',
             allergens: 'Gluten, Dairy',
-            is_jain_available: 1, is_bestseller: 0, is_recommended: 1,
+            available: 1, is_jain_available: 1, is_bestseller: 0, is_recommended: 1,
             images: 'https://images.unsplash.com/photo-1627308595229-7830a5c91f9f?w=600&auto=format&fit=crop&q=60'
         },
         // Chinese
@@ -117,7 +117,7 @@ function runSeed({ query, queryOne, run }) {
             price: 160, discount: 5, prep_time: 12, calories: 380,
             ingredients: 'Noodles, Capsicum, Carrot, Cabbage, Spring Onion, Schezwan Sauce, Soy Sauce',
             allergens: 'Gluten, Soy',
-            is_jain_available: 0, is_bestseller: 0, is_recommended: 0,
+            available: 1, is_jain_available: 0, is_bestseller: 0, is_recommended: 0,
             images: 'https://images.unsplash.com/photo-1585032226651-759b368d7246?w=600&auto=format&fit=crop&q=60'
         },
         {
@@ -127,7 +127,7 @@ function runSeed({ query, queryOne, run }) {
             price: 170, discount: 10, prep_time: 15, calories: 310,
             ingredients: 'Cabbage, Carrot, Cornflour, Garlic, Ginger, Soy Sauce, Chilli Sauce',
             allergens: 'Soy, Gluten',
-            is_jain_available: 0, is_bestseller: 1, is_recommended: 1,
+            available: 1, is_jain_available: 0, is_bestseller: 1, is_recommended: 1,
             images: 'https://images.unsplash.com/photo-1603532648955-039310d9ed75?w=600&auto=format&fit=crop&q=60'
         },
         // Fast Food
@@ -138,7 +138,7 @@ function runSeed({ query, queryOne, run }) {
             price: 220, discount: 12, prep_time: 15, calories: 520,
             ingredients: 'Pizza Base, Tomato Puree, Mozzarella Cheese, Olive Oil, Fresh Basil',
             allergens: 'Gluten, Dairy',
-            is_jain_available: 1, is_bestseller: 1, is_recommended: 1,
+            available: 1, is_jain_available: 1, is_bestseller: 1, is_recommended: 1,
             images: 'https://images.unsplash.com/photo-1604068549290-dea0e4a305ca?w=600&auto=format&fit=crop&q=60'
         },
         // Thali
@@ -149,7 +149,7 @@ function runSeed({ query, queryOne, run }) {
             price: 320, discount: 10, prep_time: 20, calories: 850,
             ingredients: 'Mixed Veggies, Paneer, Lentils, Rice, Wheat Flour, Curd, Sweets',
             allergens: 'Dairy, Gluten, Nuts',
-            is_jain_available: 1, is_bestseller: 1, is_recommended: 1,
+            available: 1, is_jain_available: 1, is_bestseller: 1, is_recommended: 1,
             images: 'https://images.unsplash.com/photo-1626777552726-4a6b54c97e46?w=600&auto=format&fit=crop&q=60'
         },
         // Breakfast
@@ -267,7 +267,7 @@ function runSeed({ query, queryOne, run }) {
         'gst_percentage': '5.0',
         'restaurant_name': 'Natkhat Pure Veg',
         'restaurant_address': 'Divine Krishna Arcade, Temple Road, Sector 4',
-        'restaurant_phone': '+91 98765 43210',
+        'restaurant_phone': '+91 95118 94159',
         'restaurant_email': 'contact@natkhatveg.com',
         'working_hours': '08:00 AM - 11:00 PM',
         'delivery_charge': '40.00',

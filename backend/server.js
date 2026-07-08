@@ -18,15 +18,22 @@ app.use(express.static(path.join(__dirname, 'public')));
 // Register API Routes
 app.use('/api', apiRouter);
 
-// Base route for API status
-app.get('/', (req, res) => {
-    res.json({
-        name: 'Natkhat Pure Veg REST API',
-        status: 'online',
-        version: '1.0.0',
-        environment: process.env.NODE_ENV || 'development',
-        supportedRoles: ['customer', 'waiter', 'cashier', 'kitchen', 'delivery', 'manager', 'admin']
-    });
+// SPA Fallback — serve React's index.html for all non-API routes (production)
+app.get('*', (req, res) => {
+    const indexPath = path.join(__dirname, 'public', 'index.html');
+    const fs = require('fs');
+    if (fs.existsSync(indexPath)) {
+        res.sendFile(indexPath);
+    } else {
+        // Dev mode: no built frontend present, return API info
+        res.json({
+            name: 'Natkhat Pure Veg REST API',
+            status: 'online',
+            version: '1.0.0',
+            environment: process.env.NODE_ENV || 'development',
+            supportedRoles: ['customer', 'waiter', 'cashier', 'kitchen', 'delivery', 'manager', 'admin']
+        });
+    }
 });
 
 // Error handling middleware
