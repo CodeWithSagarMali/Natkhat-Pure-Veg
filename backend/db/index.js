@@ -14,7 +14,7 @@ let db;
 // We initialize sql.js using a Promise, but because wasmBinary is loaded locally,
 // the callback runs synchronously within the same event loop tick.
 let initialized = false;
-initSqlJs({ wasmBinary }).then(SQL => {
+const readyPromise = initSqlJs({ wasmBinary }).then(SQL => {
     if (fs.existsSync(dbPath)) {
         const fileBuffer = fs.readFileSync(dbPath);
         db = new SQL.Database(fileBuffer);
@@ -112,8 +112,9 @@ function run(sql, params = []) {
 }
 
 module.exports = {
-    // db: null, // Set db to null for direct access compatibility
     query,
     queryOne,
-    run
+    run,
+    readyPromise  // ✅ Exported so server.js can await DB before accepting requests
 };
+
